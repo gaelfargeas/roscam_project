@@ -3,7 +3,7 @@
 # What is this?
 Roscam is a projet using ros, QT and tensorflow.
 
-![](https://raw.githubusercontent.com/gaelfargeas/roscam-project/master/img/roscam.png)
+![](https://raw.githubusercontent.com/gaelfargeas/roscam_project/main/img/roscam.png)
 # Requirements
 
 python >= 3.5
