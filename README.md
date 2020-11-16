@@ -13,13 +13,15 @@ python >= 3.5
 1) install package 
 
 ```sh
-sudo apt install qttools5-dev-tools libqt5svg5-dev qtmultimedia5-dev libqt5websockets5-dev python3
+sudo apt install qttools5-dev-tools libqt5svg5-dev qtmultimedia5-dev libqt5websockets5-dev python3 git
 pip3 install tensorflow
 
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-
+sudo apt update
 sudo apt install ros-noetic-desktop-full ros-noetic-catkin
+echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
+source ~/.bashrc
 ```
 
 2) create catkin workspace
@@ -31,11 +33,7 @@ mkdir src && cd src
 catkin_init_workspace
 ```
 
-cd /src
-
-```sh
 clone project package packages
-```
 
 - roscam_sensors
 
@@ -58,6 +56,7 @@ go back to catkin workspace
 
 ```sh
 cd ../
+catkin_make
 source devel/setup.bash
 catkin_make
 ```
@@ -99,11 +98,11 @@ rosrun roscam_sensors main.py
 
 rosrun roscam_tensorflow2 main.py
 
-rosrun roscam_application main.py
+rosrun roscam_application roscam_application
 ```
 
 you can ralso run all package in the same command prompt.
 
 ```sh
-rosrun roscam_sensors main.py && rosrun roscam_tensorflow2 main.py && rosrun roscam_application main.py
+rosrun roscam_sensors main.py && rosrun roscam_tensorflow2 main.py && rosrun roscam_application roscam_application
 ```
