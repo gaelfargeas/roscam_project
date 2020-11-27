@@ -7,20 +7,25 @@ Roscam is a projet using ros, QT and tensorflow.
 # Requirements
 
 python >= 3.5
+linux
 
 # install
 
 1) install package 
 
 ```sh
-sudo apt install qttools5-dev-tools libqt5svg5-dev qtmultimedia5-dev libqt5websockets5-dev python3 git
-pip3 install tensorflow
+sudo apt update && sudo apt full-upgrade
+sudo apt install qttools5-dev-tools libqt5svg5-dev qtmultimedia5-dev libqt5websockets5-dev python3 git python3-pyqt5.qtquick python3-pyqt5.qtmultimedia qml-module-qtquick2 qml-module-qtquick-window2 qml-module-qtquick-layouts qml-module-qtquick-controls qml-module-qtmultimedia 
+
+python3 -m pip install --upgrade pip
+python3 -m pip install tensorflow
 
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 sudo apt update
 sudo apt install ros-noetic-desktop-full ros-noetic-catkin
-echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
+
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
